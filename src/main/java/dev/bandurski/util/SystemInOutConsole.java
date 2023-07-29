@@ -184,4 +184,11 @@ public class SystemInOutConsole implements BasicConsole {
         return result;
     }
 
+    private String promptWithDefault(String prompt, Object defaultValue) {
+        if (defaultValue != null) {
+            return prompt + "[" + defaultValue.toString() + "]: ";
+        }
+        return prompt + ": ";
+    }
+
 }

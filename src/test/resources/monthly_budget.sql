@@ -18,10 +18,10 @@ CREATE TABLE IF NOT EXISTS expense (
 
 --income-source
 INSERT INTO income_source (name, amount)
-VALUES ('Salary but the name is long for some reason', 5000.21);
+VALUES ('Other', 1000.45);
 
 INSERT INTO income_source (name, amount)
-VALUES ('Other', 1000.45);
+VALUES ('Salary', 5000.21);
 
 --expense
 INSERT INTO expense (name, amount)

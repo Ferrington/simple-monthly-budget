@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b46b391c-7bbc-4990-83a0-0f39418ac1fa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/bandurski/dao/BaseDaoTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/bandurski/dao/JdbcIncomeSourceDaoTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/bandurski/dao/TestingDatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/monthly_budget.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/monthly_budget.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/monthly_budget.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/dao/JdbcIncomeSourceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/dao/JdbcIncomeSourceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/model/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/model/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/model/IncomeSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/model/IncomeSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/util/SystemInOutConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/util/SystemInOutConsole.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2TF8OQHWbX3IQK7DYJUQwpC7OGY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/cband/workspace/pair-programming/module-2-week-2-pair-4"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cband\workspace\simple-monthly-budget\src\test\resources" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="dev.bandurski.model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dev.bandurski.dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.bandurski.Application" />
+      <module name="MonthlyBudget" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.bandurski.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JdbcIncomeSourceDaoTests.createIncomeSource_inserts_source_with_expected_values" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MonthlyBudget" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.bandurski.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.bandurski.dao" />
+      <option name="MAIN_CLASS_NAME" value="dev.bandurski.dao.JdbcIncomeSourceDaoTests" />
+      <option name="METHOD_NAME" value="createIncomeSource_inserts_source_with_expected_values" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JdbcIncomeSourceDaoTests.deleteIncomeSourceById_source_can_no_longer_be_retrieved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MonthlyBudget" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.bandurski.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.bandurski.dao" />
+      <option name="MAIN_CLASS_NAME" value="dev.bandurski.dao.JdbcIncomeSourceDaoTests" />
+      <option name="METHOD_NAME" value="deleteIncomeSourceById_source_can_no_longer_be_retrieved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JdbcIncomeSourceDaoTests.getIncomeSourceById_returns_correct_source" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MonthlyBudget" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.bandurski.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.bandurski.dao" />
+      <option name="MAIN_CLASS_NAME" value="dev.bandurski.dao.JdbcIncomeSourceDaoTests" />
+      <option name="METHOD_NAME" value="getIncomeSourceById_returns_correct_source" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JdbcIncomeSourceDaoTests.updateIncomeSource_updates_source_with_expected_values" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MonthlyBudget" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.bandurski.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.bandurski.dao" />
+      <option name="MAIN_CLASS_NAME" value="dev.bandurski.dao.JdbcIncomeSourceDaoTests" />
+      <option name="METHOD_NAME" value="updateIncomeSource_updates_source_with_expected_values" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="simple-monthly-budget" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="simple-monthly-budget" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.deleteIncomeSourceById_source_can_no_longer_be_retrieved" />
+        <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.updateIncomeSource_updates_source_with_expected_values" />
+        <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.createIncomeSource_inserts_source_with_expected_values" />
+        <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.getIncomeSourceById_returns_correct_source" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b46b391c-7bbc-4990-83a0-0f39418ac1fa" name="Changes" comment="" />
+      <created>1690627435432</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690627435432</updated>
+    </task>
+    <servers />
+  </component>
+</project>

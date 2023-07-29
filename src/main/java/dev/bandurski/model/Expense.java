@@ -2,9 +2,8 @@ package dev.bandurski.model;
 
 import java.math.BigDecimal;
 
-public class Expense {
+public class Expense implements Transaction {
     private int expenseId;
-    private int categoryId;
     private String name;
     private BigDecimal amount;
 
@@ -14,14 +13,6 @@ public class Expense {
 
     public void setExpenseId(int expenseId) {
         this.expenseId = expenseId;
-    }
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -44,7 +35,6 @@ public class Expense {
     public String toString() {
         return "Expense{" +
                 "expenseId=" + expenseId +
-                ", categoryId=" + categoryId +
                 ", name='" + name + '\'' +
                 ", amount=" + amount +
                 '}';

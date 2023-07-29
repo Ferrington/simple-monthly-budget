@@ -3,10 +3,12 @@ package dev.bandurski;
 import dev.bandurski.dao.IncomeSourceDao;
 import dev.bandurski.dao.JdbcIncomeSourceDao;
 import dev.bandurski.exception.DaoException;
+import dev.bandurski.model.IncomeSource;
 import dev.bandurski.util.BasicConsole;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 import javax.sql.DataSource;
+import java.util.List;
 
 public class ApplicationController {
 
@@ -76,12 +78,75 @@ public class ApplicationController {
 
             try {
                 if (selection.equals(VIEW)) {
-                    view.displayIncome();
+                    viewIncomeSources();
+                } else if (selection.equals(CREATE)) {
+                    createIncomeSource();
+                } else if (selection.equals(UPDATE)) {
+                    updateIncomeSource();
+                } else if (selection.equals(DELETE)) {
+                    deleteIncomeSource();
+                } else if (selection.equals(RETURN)) {
+                    break;
                 }
             } catch (DaoException e) {
                 console.printErrorMessage("DAO error - " + e.getMessage());
+                throw e;
             }
         }
+    }
+
+    private void viewIncomeSources() {
+        List<IncomeSource> incomeSources = incomeSourceDao.getIncomeSources();
+        view.displayIncomeSources(incomeSources);
+    }
+
+    private void createIncomeSource() {
+        IncomeSource newIncomeSource = view.promptForIncomeSource(null);
+
+        if (newIncomeSource == null) {
+            return;
+        }
+
+        newIncomeSource = incomeSourceDao.createIncomeSource(newIncomeSource);
+        console.printMessage("Income Source " + newIncomeSource.getName() +
+                " has been created.");
+    }
+
+    private void updateIncomeSource() {
+        List<IncomeSource> sources = incomeSourceDao.getIncomeSources();
+
+        IncomeSource source = view.selectIncomeSource(sources);
+        if (source == null) {
+            return;
+        }
+
+        source = view.promptForIncomeSource(source);
+
+        incomeSourceDao.updateIncomeSource(source);
+        console.printMessage("Income source has been updated.");
+    }
+
+    private void deleteIncomeSource() {
+        List<IncomeSource> sources = incomeSourceDao.getIncomeSources();
+        if (sources.size() == 0) {
+            console.printErrorMessage("There are no income sources to delete!");
+            return;
+        }
+
+        IncomeSource source = view.selectIncomeSource(sources);
+
+        if (source == null) {
+            return;
+        }
+
+        boolean isConfirmed = console.promptForYesNo("Are you sure you want to delete this income source?");
+        if (!isConfirmed) {
+            return;
+        }
+
+        incomeSourceDao.deleteIncomeSourceById(source.getIncomeSourceId());
+
+        console.printMessage("Income source has been deleted.");
     }
 
     private void expensesMenu() {
