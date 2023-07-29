@@ -85,7 +85,7 @@ public class ApplicationController {
                     updateIncomeSource();
                 } else if (selection.equals(DELETE)) {
                     deleteIncomeSource();
-                } else if (selection.equals(RETURN)) {
+                } else {
                     break;
                 }
             } catch (DaoException e) {
@@ -150,6 +150,50 @@ public class ApplicationController {
     }
 
     private void expensesMenu() {
+        final String VIEW = "View expenses";
+        final String CREATE = "Add new expense";
+        final String UPDATE = "Modify expense";
+        final String DELETE = "Delete expense";
+        final String RETURN = "Return to Main Menu";
+        final String[] MENU_OPTIONS = {VIEW, CREATE, UPDATE, DELETE, RETURN};
+
+        while (true) {
+            console.printBlankLine();
+            String title = "Expense Menu";
+            String selection = view.getMenuSelection(title, MENU_OPTIONS);
+            console.printDivider();
+            console.printBlankLine();
+
+            try {
+                if (selection.equals(VIEW)) {
+                    viewExpenses();
+                } else if (selection.equals(CREATE)) {
+                    createExpense();
+                } else if (selection.equals(UPDATE)) {
+                    updateExpense();
+                } else if (selection.equals(DELETE)) {
+                    deleteExpense();
+                } else {
+                    break;
+                }
+            } catch (DaoException e) {
+                console.printErrorMessage("DAO error - " + e.getMessage());
+                throw e;
+            }
+        }
+    }
+
+    private void viewExpenses() {
+    }
+
+    private void createExpense() {
+    }
+
+    private void updateExpense() {
+    }
+
+    private void deleteExpense() {
+
     }
 
     private DataSource setupDataSource(String databaseName) {
