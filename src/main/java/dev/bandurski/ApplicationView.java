@@ -21,6 +21,20 @@ public class ApplicationView {
         return console.getMenuSelection(options);
     }
 
+    public void displaySummary(List<IncomeSource> incomeSources, List<Expense> expenses) {
+        displayIncomeSources(incomeSources);
+        displayExpenses(expenses);
+
+        BigDecimal netIncome = computeMonthlyNetIncome(incomeSources, expenses);
+
+        console.printDivider();
+        console.printBanner(String.format(
+                "      %-10s  %s",
+                "Net Income",
+                netIncome
+        ));
+    }
+
     public void displayIncomeSources(List<IncomeSource> incomeSources) {
         displayIncomeSources(incomeSources, true);
     }
@@ -234,39 +248,17 @@ public class ApplicationView {
         return padding;
     }
 
-    private String defaultOnEnter(String response, String defaultValue) {
-        if (response.isBlank()) {
-            return defaultValue;
-        }
-        else {
-            return response;
-        }
-    }
+    private BigDecimal computeMonthlyNetIncome(List<IncomeSource> sources, List<Expense> expenses) {
+        BigDecimal netIncome = BigDecimal.ZERO;
 
-    private LocalDate defaultOnEnter(LocalDate response, LocalDate defaultValue) {
-        if (response == null) {
-            return defaultValue;
+        for (IncomeSource source: sources) {
+            netIncome = netIncome.add(source.getAmount());
         }
-        else {
-            return response;
-        }
-    }
 
-    private Integer defaultOnEnter(Integer response, Integer defaultValue) {
-        if (response == null) {
-            return defaultValue;
+        for (Expense expense: expenses) {
+            netIncome = netIncome.subtract(expense.getAmount());
         }
-        else {
-            return response;
-        }
-    }
 
-    private BigDecimal defaultOnEnter(BigDecimal response, BigDecimal defaultValue) {
-        if (response == null) {
-            return defaultValue;
-        }
-        else {
-            return response;
-        }
+        return netIncome;
     }
 }

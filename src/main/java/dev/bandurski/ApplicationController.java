@@ -11,6 +11,7 @@ import dev.bandurski.util.BasicConsole;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 import javax.sql.DataSource;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ApplicationController {
@@ -63,7 +64,10 @@ public class ApplicationController {
     }
 
     private void summary() {
-
+        List<IncomeSource> incomeSources = incomeSourceDao.getIncomeSources();
+        List<Expense> expenses = expenseDao.getExpenses();
+        view.displaySummary(incomeSources, expenses);
+        console.pauseOutput();
     }
 
     private void incomeMenu() {
