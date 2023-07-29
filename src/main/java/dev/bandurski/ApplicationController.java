@@ -1,8 +1,11 @@
 package dev.bandurski;
 
+import dev.bandurski.dao.ExpenseDao;
 import dev.bandurski.dao.IncomeSourceDao;
+import dev.bandurski.dao.JdbcExpenseDao;
 import dev.bandurski.dao.JdbcIncomeSourceDao;
 import dev.bandurski.exception.DaoException;
+import dev.bandurski.model.Expense;
 import dev.bandurski.model.IncomeSource;
 import dev.bandurski.util.BasicConsole;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
@@ -18,6 +21,7 @@ public class ApplicationController {
     private final ApplicationView view;
 
     private final IncomeSourceDao incomeSourceDao;
+    private final ExpenseDao expenseDao;
 
     public ApplicationController(BasicConsole console) {
         this.console = console;
@@ -25,6 +29,7 @@ public class ApplicationController {
 
         DataSource dataSource = setupDataSource(DB_NAME);
         incomeSourceDao = new JdbcIncomeSourceDao(dataSource);
+        expenseDao = new JdbcExpenseDao(dataSource);
     }
 
     public void run() {
@@ -115,6 +120,11 @@ public class ApplicationController {
     private void updateIncomeSource() {
         List<IncomeSource> sources = incomeSourceDao.getIncomeSources();
 
+        if (sources.size() == 0) {
+            console.printErrorMessage("There are no income sources to update!");
+            return;
+        }
+
         IncomeSource source = view.selectIncomeSource(sources);
         if (source == null) {
             return;
@@ -139,7 +149,8 @@ public class ApplicationController {
             return;
         }
 
-        boolean isConfirmed = console.promptForYesNo("Are you sure you want to delete this income source?");
+        boolean isConfirmed = console.promptForYesNo("Are you sure you want to delete this " +
+                "income source? [y/n] ");
         if (!isConfirmed) {
             return;
         }
@@ -184,16 +195,63 @@ public class ApplicationController {
     }
 
     private void viewExpenses() {
+        List<Expense> expenses = expenseDao.getExpenses();
+        view.displayExpenses(expenses);
     }
 
     private void createExpense() {
+        Expense newExpense = view.promptForExpense(null);
+
+        if (newExpense == null) {
+            return;
+        }
+
+        newExpense = expenseDao.createExpense(newExpense);
+        console.printMessage("Expense " + newExpense.getName() +
+                " has been created.");
     }
 
     private void updateExpense() {
+        List<Expense> expenses = expenseDao.getExpenses();
+
+        if (expenses.size() == 0) {
+            console.printErrorMessage("There are no expenses to update!");
+            return;
+        }
+
+        Expense expense = view.selectExpense(expenses);
+        if (expense == null) {
+            return;
+        }
+
+        expense = view.promptForExpense(expense);
+
+        expenseDao.updateExpense(expense);
+        console.printMessage("Expense has been updated.");
     }
 
     private void deleteExpense() {
+        List<Expense> expenses = expenseDao.getExpenses();
+        if (expenses.size() == 0) {
+            console.printErrorMessage("There are no expenses to delete!");
+            return;
+        }
 
+        Expense expense = view.selectExpense(expenses);
+
+        if (expense == null) {
+            return;
+        }
+
+        boolean isConfirmed = console.promptForYesNo("Are you sure you want to delete this expense? " +
+                "[y/n] ");
+        if (!isConfirmed) {
+            return;
+        }
+
+        expenseDao.deleteExpenseById(expense.getExpenseId());
+
+        console.printMessage("Expense has been deleted.");
     }
 
     private DataSource setupDataSource(String databaseName) {

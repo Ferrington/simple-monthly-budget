@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b46b391c-7bbc-4990-83a0-0f39418ac1fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/bandurski/dao/JdbcExpenseDaoTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/dao/ExpenseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/dao/ExpenseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/dao/JdbcExpenseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/dao/JdbcExpenseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dev/bandurski/dao/JdbcIncomeSourceDaoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dev/bandurski/dao/JdbcIncomeSourceDaoTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/bandurski/ApplicationView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +60,7 @@
       <recent name="dev.bandurski.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JdbcExpenseDaoTests">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.bandurski.Application" />
       <module name="MonthlyBudget" />
@@ -154,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JdbcExpenseDaoTests" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.JdbcExpenseDaoTests" />
         <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.deleteIncomeSourceById_source_can_no_longer_be_retrieved" />
         <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.updateIncomeSource_updates_source_with_expected_values" />
         <item itemvalue="JUnit.JdbcIncomeSourceDaoTests.createIncomeSource_inserts_source_with_expected_values" />

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+import dev.bandurski.model.Expense;
 import dev.bandurski.model.IncomeSource;
 import dev.bandurski.model.Transaction;
 import dev.bandurski.util.BasicConsole;
@@ -89,6 +90,80 @@ public class ApplicationView {
         for (IncomeSource incomeSource : incomeSources) {
             if (incomeSource.getIncomeSourceId() == incomeSourceId) {
                 return incomeSource;
+            }
+        }
+        return null;
+    }
+
+    public void displayExpenses(List<Expense> expenses) {
+        displayExpenses(expenses, true);
+    }
+
+    public void displayExpenses(List<Expense> expenses, boolean displayTotal) {
+        int padding = calculatePaddingLength(expenses);
+
+        String title = String.format(
+                "Expenses%n%4s  %-" + padding + "s  %s",
+                "Id",
+                "Name",
+                "Amount"
+        );
+        console.printBanner(title);
+
+        BigDecimal total = BigDecimal.ZERO;
+        for (Expense expense: expenses) {
+            console.printMessage(String.format(
+                    "%4s  %-" + padding + "s  %s",
+                    expense.getExpenseId(),
+                    expense.getName(),
+                    expense.getAmount()
+            ));
+
+            total = total.add(expense.getAmount());
+        }
+
+        if (displayTotal) {
+            console.printDivider();
+            console.printMessage(String.format(
+                    "      %-" + padding + "s  %s",
+                    "Total",
+                    total
+            ));
+        }
+    }
+
+    public Expense promptForExpense(Expense existingExpense) {
+        Expense newExpense = new Expense();
+        if (existingExpense == null) {
+            newExpense.setName(promptForName(null));
+            newExpense.setAmount(promptForAmount(null));
+        } else {
+            newExpense.setExpenseId(existingExpense.getExpenseId());
+            newExpense.setName(promptForName(existingExpense.getName()));
+            newExpense.setAmount(promptForAmount(existingExpense.getAmount()));
+        }
+        return newExpense;
+    }
+
+    public Expense selectExpense(List<Expense> expenses) {
+        while (true) {
+            displayExpenses(expenses, false);
+            Integer expenseId = console.promptForInteger("Enter Expense Id [0 to cancel]: ");
+            if (expenseId == null || expenseId == 0) {
+                return null;
+            }
+            Expense selectedExpense = findExpenseById(expenses, expenseId);
+            if (selectedExpense != null) {
+                return selectedExpense;
+            }
+            console.printErrorMessage("That's not a valid id. Please try again.");
+        }
+    }
+
+    private Expense findExpenseById(List<Expense> expenses, Integer expenseId) {
+        for (Expense expense : expenses) {
+            if (expense.getExpenseId() == expenseId) {
+                return expense;
             }
         }
         return null;
